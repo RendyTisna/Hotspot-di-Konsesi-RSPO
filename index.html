@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hotspot di Konsesi RSPO</title>
+<style>
+:root{--bg:#f6f4ee;--card:#fff;--tx:#1f2a1c;--mu:#6b7565;--ac:#d9480f;--g:#3b7d3a;--tr:#e9e5d8;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141a12;--card:#1e271b;--tx:#eef3e8;--mu:#a3ae9c;--ac:#ff7a3d;--g:#7cc16a;--tr:#2c3828}}
+*{box-sizing:border-box}html,body{height:100%;margin:0}
+body{background:var(--bg);color:var(--tx);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;display:flex;flex-direction:column}
+.stage{flex:1;overflow:hidden;position:relative}
+.slide{position:absolute;inset:0;padding:18px 16px 8px;overflow-y:auto;opacity:0;transform:translateX(30px);pointer-events:none;transition:.35s}
+.slide.on{opacity:1;transform:none;pointer-events:auto}
+.wrap{max-width:760px;margin:0 auto}
+.tag{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ac);font-weight:700}
+h1{font-size:clamp(24px,5.5vw,34px);margin:4px 0 6px;line-height:1.12}
+.sub{color:var(--mu);margin:0 0 12px;font-size:14px}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.tabs button{border:1px solid var(--tr);background:var(--card);color:var(--tx);padding:7px 13px;border-radius:999px;font-size:13px;cursor:pointer}
+.tabs button.on{background:var(--ac);border-color:var(--ac);color:#fff;font-weight:700}
+.box{background:var(--card);border-radius:14px;padding:10px 12px}
+.row{display:grid;grid-template-columns:minmax(90px,34%) 1fr;gap:10px;align-items:center;padding:6px 4px;border-radius:8px;cursor:pointer}
+.row:hover,.row.sel{background:var(--tr)}
+.nm{font-size:13px;line-height:1.2}
+.trk{background:var(--tr);border-radius:6px;height:22px;position:relative;display:flex;overflow:hidden}
+.row:hover .trk,.row.sel .trk{background:var(--bg)}
+.f{height:100%;width:0;background:linear-gradient(90deg,var(--g),var(--ac));transition:width .7s cubic-bezier(.2,.8,.2,1);flex:none}
+.f.b{background:var(--mu);opacity:.45}
+.v{position:absolute;left:6px;top:50%;transform:translateY(-50%);font-size:11px;font-weight:700;color:var(--tx);text-shadow:0 0 3px var(--card)}
+.info{margin-top:10px;background:var(--card);border-left:4px solid var(--ac);border-radius:10px;padding:11px 13px;font-size:14px;min-height:60px;line-height:1.45}
+.info b{color:var(--ac)}
+.hint{font-size:12px;color:var(--mu);margin:7px 2px 0}
+.ringw{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.ringw svg{width:170px;height:170px;flex:none;margin:0 auto}
+.ring{transition:stroke-dasharray .9s cubic-bezier(.2,.8,.2,1)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.card{background:var(--card);border-radius:14px;padding:14px;cursor:pointer;min-height:130px;border:2px solid transparent}
+.card:hover,.card.sel{border-color:var(--ac)}
+.card b{display:block;font-size:30px;color:var(--ac)}
+.card small{color:var(--mu);font-size:12px}
+.card p{font-size:13px;margin:6px 0 0}
+.lg{display:flex;gap:12px;font-size:12px;color:var(--mu);margin:0 0 6px}
+.lg i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:4px;vertical-align:middle}
+nav{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;gap:10px;border-top:1px solid var(--tr);background:var(--bg)}
+nav button{border:0;background:var(--ac);color:#fff;font-weight:700;padding:10px 18px;border-radius:999px;font-size:14px;cursor:pointer}
+nav button:disabled{opacity:.3;cursor:default}
+.dots{display:flex;gap:8px}.dots i{width:9px;height:9px;border-radius:50%;background:var(--tr);cursor:pointer;display:block}.dots i.on{background:var(--ac);width:24px;border-radius:6px}
+</style></head><body>
+<div class="stage" id="stage">
+
+<section class="slide on"><div class="wrap">
+<div class="tag">Analisis Geopix · Habitat satwa</div>
+<h1>Api di konsesi RSPO, di tengah habitat satwa</h1>
+<p class="sub">Pilih satwa untuk melihat porsi hotspot yang beririsan dengan habitatnya.</p>
+<div class="tabs" id="t1"></div>
+<div class="box ringw"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="38" fill="none" stroke="var(--tr)" stroke-width="14"/><circle id="ring" class="ring" cx="50" cy="50" r="38" fill="none" stroke="var(--ac)" stroke-width="14" stroke-linecap="round" stroke-dasharray="0 240" transform="rotate(-90 50 50)"/><text id="rt" x="50" y="56" text-anchor="middle" font-size="17" font-weight="700" fill="var(--tx)"></text></svg>
+<div class="info" style="flex:1;min-width:200px;margin:0" id="i1"></div></div>
+<p class="hint">Hotspot di konsesi RSPO Kalimantan = 13,8× Sumatra. Api di habitat merusak pohon pakan, sarang, kanopi, dan konektivitas lanskap, serta menambah risiko konflik manusia–satwa.</p>
+</div></section>
+
+<section class="slide"><div class="wrap">
+<div class="tag">Sebaran provinsi</div>
+<h1>Kalimantan Barat dan Sumatera Selatan paling terdampak</h1>
+<p class="sub">Hotspot di konsesi bersertifikat RSPO per provinsi.</p>
+<div class="tabs" id="t2"></div><div class="box" id="b2"></div><div class="info" id="i2"></div>
+</div></section>
+
+<section class="slide"><div class="wrap">
+<div class="tag">Penguasaan lahan</div>
+<h1>Luas perkebunan RSPO vs non-RSPO</h1>
+<p class="sub">Data BPS dan GeoRSPO (2026), dalam hektare. Ketuk baris untuk porsi RSPO.</p>
+<div class="tabs" id="t3"></div>
+<div class="lg"><span><i style="background:var(--ac)"></i>RSPO</span><span><i style="background:var(--mu);opacity:.5"></i>Non-RSPO</span></div>
+<div class="box" id="b3"></div><div class="info" id="i3"></div>
+</div></section>
+
+<section class="slide"><div class="wrap">
+<div class="tag">Kelompok usaha</div>
+<h1>Siapa menguasai lahan bersertifikat terluas?</h1>
+<p class="sub">Luas area bersertifikat RSPO per perusahaan induk (hektare).</p>
+<div class="tabs" id="t4"></div><div class="box" id="b4"></div><div class="info" id="i4"></div>
+</div></section>
+
+<section class="slide"><div class="wrap">
+<div class="tag">Pola bulanan</div>
+<h1>Puncak hotspot: September</h1>
+<p class="sub">Pilih perusahaan induk di Kalimantan untuk melihat hotspot per bulan (Juni–Oktober, Oktober s.d. 28).</p>
+<div class="tabs" id="t5"></div><div class="box" id="b5"></div><div class="info" id="i5"></div>
+</div></section>
+
+<section class="slide"><div class="wrap">
+<div class="tag">Lonjakan</div>
+<h1>Dari hampir nol menjadi ratusan</h1>
+<p class="sub">Ketuk kartu untuk detailnya.</p>
+<div class="cards" id="cards"></div><div class="info" id="i6"></div>
+</div></section>
+</div>
+<nav><button id="prev">‹ Kembali</button><div class="dots" id="dots"></div><button id="next">Lanjut ›</button></nav>
+
+<script>
+const F=n=>n.toLocaleString("id-ID"),P=x=>x.toFixed(2).replace(".",",")+"%";
+const $=id=>document.getElementById(id);
+function tabs(id,labels,cb){const el=$(id);labels.forEach((l,i)=>{const b=document.createElement("button");b.textContent=l;b.onclick=()=>{[...el.children].forEach(x=>x.classList.remove("on"));b.classList.add("on");cb(i)};el.appendChild(b)});el.children[0].click()}
+// generic bars: data [{n,v,v2?,t?}]; v2 = stacked second segment
+function bars(boxId,infoId,data,info,fmt=F){
+  const box=$(boxId),inf=$(infoId);box.innerHTML="";
+  const max=Math.max(...data.map(d=>d.v+(d.v2||0)));
+  data.forEach((d,i)=>{
+    const r=document.createElement("div");r.className="row";
+    const w1=d.v/max*100,w2=(d.v2||0)/max*100;
+    r.innerHTML=`<div class="nm">${d.n}</div><div class="trk"><div class="f" data-w="${w1}"></div>${d.v2?`<div class="f b" data-w="${w2}"></div>`:""}<span class="v">${fmt(d.v)}</span></div>`;
+    r.onclick=()=>{box.querySelectorAll(".row").forEach(x=>x.classList.remove("sel"));r.classList.add("sel");inf.innerHTML=info(d,i,data)};
+    box.appendChild(r);if(i==0)r.onclick();
+  });
+  requestAnimationFrame(()=>requestAnimationFrame(()=>box.querySelectorAll(".f").forEach(f=>f.style.width=f.dataset.w+"%")));
+}
+// S1
+const SP=[["Orangutan Kalimantan",23376,26420,"Dari <b>26.420</b> hotspot di konsesi bersertifikat RSPO Kalimantan, <b>23.376</b> berada di habitat orangutan: hampir 9 dari 10 titik. Kajian mencakup <i>P. p. pygmaeus</i>, <i>wurmbii</i>, dan <i>morio</i>."],
+["Harimau Sumatra",100,1913,"Dari <b>1.913</b> hotspot di konsesi RSPO Sumatra, <b>100</b> berada di habitat harimau. S&G Biofuel mencatat 74 titik, semuanya pada Agustus."],
+["Gajah Sumatra",11,1913,"<b>11</b> titik berada di wilayah jelajah gajah, berdasarkan evaluasi 21 kantong habitat. Kuala Lumpur Kepong mencatat 5 titik pada September."]];
+tabs("t1",SP.map(s=>s[0]),i=>{const[,a,b,t]=SP[i],p=a/b*100;$("ring").setAttribute("stroke-dasharray",`${2*Math.PI*38*p/100} 240`);$("rt").textContent=P(p);$("i1").innerHTML=t});
+// S2
+const PV={Kalimantan:[["Kalimantan Barat",14366],["Kalimantan Tengah",8945]],Sumatra:[["Sumatera Selatan",1094],["Jambi",347],["Lampung",229],["Kep. Bangka Belitung",125],["Riau",92],["Sumatera Utara",13],["Sumatera Barat",10],["Bengkulu",2],["Aceh",1]]};
+const PN={"Kalimantan Barat":"Naik dari 49 hotspot (Juni) menjadi 7.467 (September). Sekitar 54,3% hotspot konsesi RSPO di Kalimantan.","Sumatera Selatan":"Naik dari 2 titik (Juni) menjadi 510 pada 1–28 Oktober: 255 kali lipat. Lebih dari separuh total di Sumatra."};
+tabs("t2",["Kalimantan","Sumatra"],i=>{const k=["Kalimantan","Sumatra"][i],tot=26420+0,d=PV[k].map(x=>({n:x[0],v:x[1]}));
+ bars("b2","i2",d,(x,j)=>`<b>${x.n}</b>: ${F(x.v)} hotspot, peringkat ${j+1}.${PN[x.n]?"<br>"+PN[x.n]:""}`)});
+// S3
+const LU=[["Kalimantan Tengah",903155,1237205,0],["Kalimantan Barat",759762,1513783,0],["Riau",597624,2742239,1],["Kalimantan Timur",558134,863171,0],["Sumatera Utara",538421,833328,1],["Sumatera Selatan",287667,1039726,1],["Kalimantan Selatan",222667,272525,0],["Jambi",137668,793673,1],["Aceh",80028,414440,1],["Sumatera Barat",57743,409358,1]];
+tabs("t3",["Semua","Kalimantan","Sumatra"],i=>{const d=LU.filter(x=>i==0||(i==1)==!x[3]).map(x=>({n:x[0],v:x[1],v2:x[2]}));
+ bars("b3","i3",d,x=>`<b>${x.n}</b>: RSPO ${F(x.v)} ha, non-RSPO ${F(x.v2)} ha. Porsi RSPO <b>${P(x.v/(x.v+x.v2)*100)}</b>.`)});
+// S4
+const GK=[["Golden Agri-Resources",349545.76],["Genting Plantations",170731.56],["First Resources",149004.18],["Bumitama Agri",147411.43],["Wilmar International",144045.53],["Astra Agro Lestari",141049.25],["Triputra Agro Persada",131340.17],["SD Guthrie",131063.42],["Dharma Satya Nusantara",123035.31],["Cargill",119225.75]];
+const GS=[["PT Perkebunan Nusantara III",560289.28],["Inti Indosawit Subur",167858.46],["Golden Agri-Resources",167049.60],["Kuala Lumpur Kepong",112646.30],["SIPEF Group",105481.83],["Prime Agri Resources",104240.29],["First Resources",89808.80],["SD Guthrie",70474.95],["Musim Mas",68813.35],["Astra Agro Lestari",68257.85]];
+tabs("t4",["Kalimantan","Sumatra"],i=>{const g=[GK,GS][i],tot=g.reduce((s,x)=>s+x[1],0);
+ bars("b4","i4",g.map(x=>({n:x[0],v:x[1]})),(x,j)=>`<b>${x.n}</b>: ${x.v.toLocaleString("id-ID",{maximumFractionDigits:2})} ha, peringkat ${j+1}, ${P(x.v/tot*100)} dari 10 besar.${i==1&&j==0?"<br>PTPN III punya hampir 600.000 ha bersertifikat secara nasional.":""}`,v=>F(Math.round(v)))});
+// S5
+const M=[["First Resources",[11,100,1751,2040,227]],["Bumitama Agri",[6,36,509,2440,448]],["Golden Agri-Resources",[20,102,606,1579,505]],["Musim Mas",[1,92,656,996,508]]];
+const BL=["Juni","Juli","Agustus","September","Oktober"];
+tabs("t5",M.map(m=>m[0]),i=>{const[n,a]=M[i],tot=a.reduce((s,x)=>s+x,0),pk=a.indexOf(Math.max(...a));
+ bars("b5","i5",a.map((v,j)=>({n:BL[j],v})),(x,j)=>`<b>${n}</b>, ${x.n}: ${F(x.v)} hotspot (${P(x.v/tot*100)} dari total ${F(tot)}).${j==pk?"<br>Bulan puncak.":""}`)});
+// S6
+const LJ=[["622×","Kayung Agro Lestari","1 hotspot (Juli) → 622 (Agustus)."],["255×","Sumatera Selatan","2 titik (Juni) → 510 (1–28 Oktober)."],["19,2×","Damai Agro Sejahtera","105 (Agustus) → 2.023 (September), ±84% dari seluruh temuan perusahaan ini; total 2.408, tertinggi di Kalimantan."],["330×","First Resources (habitat orangutan)","6 titik (Juni) → 1.980 (September)."],["152×","Kalimantan Barat","49 (Juni) → 7.467 (September)."]];
+LJ.forEach((l,i)=>{const c=document.createElement("div");c.className="card";c.innerHTML=`<b>${l[0]}</b><small>${l[1]}</small>`;c.onclick=()=>{document.querySelectorAll(".card").forEach(x=>x.classList.remove("sel"));c.classList.add("sel");$("i6").innerHTML=`<b>${l[1]}</b><br>${l[2]}`};$("cards").appendChild(c);if(!i)c.onclick()});
+// nav
+const S=[...document.querySelectorAll(".slide")],D=$("dots");let cur=0;
+S.forEach((_,i)=>{const d=document.createElement("i");d.onclick=()=>go(i);D.appendChild(d)});
+function go(i){cur=Math.max(0,Math.min(S.length-1,i));S.forEach((s,j)=>s.classList.toggle("on",j==cur));[...D.children].forEach((d,j)=>d.classList.toggle("on",j==cur));$("prev").disabled=!cur;$("next").disabled=cur==S.length-1;S[cur].scrollTop=0}
+$("prev").onclick=()=>go(cur-1);$("next").onclick=()=>go(cur+1);
+addEventListener("keydown",e=>{if(e.key=="ArrowRight")go(cur+1);if(e.key=="ArrowLeft")go(cur-1)});
+let x0=null;const st=$("stage");st.addEventListener("touchstart",e=>x0=e.touches[0].clientX,{passive:true});st.addEventListener("touchend",e=>{if(x0===null)return;const d=e.changedTouches[0].clientX-x0;if(Math.abs(d)>70)go(cur+(d<0?1:-1));x0=null});
+go(0);
+</script></body></html>
